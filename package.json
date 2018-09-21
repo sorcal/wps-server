@@ -1,0 +1,25 @@
+{
+  "name": "wps-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sorcal/wps-server.git"
+  },
+  "author": "Alexey Frolov <afrolov@wiley.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sorcal/wps-server/issues"
+  },
+  "homepage": "https://github.com/sorcal/wps-server#readme",
+  "dependencies": {
+    "apollo-server": "^2.1.0",
+    "apollo-server-express": "^2.1.0",
+    "graphql": "^14.0.2"
+  }
+}
