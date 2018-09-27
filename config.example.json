@@ -1,0 +1,9 @@
+{
+  "postres": {
+    "user": "dbuser",
+    "host": "database.server.com",
+    "database": "mydb",
+    "password": "secretpassword",
+    "port": 3211
+  }
+}
