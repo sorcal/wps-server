@@ -1,11 +1,17 @@
 import { ApolloServer, gql } from 'apollo-server';
-import dbClient from './dbClient';
+import dbClient from './db/dbClient';
+import SonarQube from './db/SonarQube'
 
 // The GraphQL schema
 const typeDefs = gql`
+  type SonarQubeStat {
+    project: String,
+    bugs_amount: Int,
+  }
   type Query {
     "A simple type for getting started!"
-    hello: String
+    hello: String,
+    sonarQubeStats: [SonarQubeStat],
   }
 `;
 
@@ -15,6 +21,9 @@ const resolvers = {
     hello: async () => {
       const res = await dbClient.query('SELECT $1::text as message', ['Hello world!']);
       return res.rows[0].message;
+    },
+    sonarQubeStats: async (projectName) => {
+      return await SonarQube.getStatsForProject('spr');
     }
   }
 };
